@@ -41,7 +41,8 @@ Assumption: all-agents is appropriate for our use case.
 
 - What you select for your application's empty or error return values depends on what you want the application to do. Since there isn't a full context for this test application, I have chosen to return None for empty and to print out error messages directly with print(), including passing along Wikipedia's error codes to print. 
 Other options could be [], {}, "", etc. and console.log, raise Exception, trigger a monitoring framework such as Rollbar, etc.
+I would also likely add some kind of visual progress indicator in the interface for slow queries, depending on how slow they were.
 
-- Again, depending on application context, you may wish to validate article title to certain formatting, or you may just wish to pass along Wikipedia's own 404 response if you submit a bad title. I opted for the latter since no definition was given for correct formatting. I considered limiting whitespace just to say I did, but turns out the wikipedia API actually handles whitespace fine.
+- Again, depending on the application, you may wish to validate article title to certain formatting, or you may just wish to pass along Wikipedia's own 404 response if you submit a bad title. I opted for the latter since no definition was given for correct formatting. I considered limiting whitespace just to say I did, but turns out the wikipedia API actually handles whitespace fine.
 
 - If, in the context of a real application, we expected to do repeated operations on the same article or same date range, I would almost certainly store/cache the requested and calculated information (most viewed or top view day, for example) locally to avoid costly repetitions since the source data from Wikipedia will never change for dates in the past.
