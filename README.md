@@ -17,19 +17,21 @@ Or the test suite via this command:
 # Assumptions
 Assumption: Top 1000 per day is a reasonable data set for calculating most viewed for a week or month. 
 This assumption could be invalid if you had widely varying read counts from day to day. e.g. 
+```
     Day 1: Article 1: 50 reads, Article 2: 40 reads, etc… 
     Day 2: Article 2: 11 reads, Articles 3 through 1000: 10 reads each
            Article 1: 9 reads - but counted as 0 since it is out of the top 1000
 
     Actual read counts after two days: 1: 59, 2: 51
     Calculated read counts after two days: 1: 50, 2: 51
-Alternate Considerations: Depending on production resources, project goals, and how often we expect to hit this calculation, we may choose to use even a smaller dataset than 1000 to calculate with at the expense of accuracy. It appears that 1000 is the maximum provided by the wikipedia API.
+```
+- Alternate Considerations: Depending on production resources, project goals, and how often we expect to hit this calculation, we may choose to use even a smaller dataset than 1000 to calculate with at the expense of accuracy. It appears that 1000 is the maximum provided by the wikipedia API.
 
-Assumption: we are only concerned with the en.wikipedia domain, since that was the link provided in the assessment
-Alternate Considerations: wikipedia’s API provides other domains (e.g. pt.wikipedia, en.wikisource) and we may wish to include those.
+Assumption: we are only concerned with the en.wikipedia domain, since that was the link provided in the assessment.
+- Alternate Considerations: wikipedia’s API provides other domains (e.g. pt.wikipedia, en.wikisource) and we may wish to include those.
 
-Assumption: all-agents is appropriate for our use case
-Alternate Considerations: you may wish to limit to only human users or more specific criteria
+Assumption: all-agents is appropriate for our use case.
+- Alternate Considerations: you may wish to limit to only human users or more specific criteria
 
 
 # Additional Thoughts
