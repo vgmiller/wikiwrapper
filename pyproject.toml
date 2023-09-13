@@ -1,0 +1,12 @@
+[project]
+name = "wikiwrapper"
+version = "0.0.1"
+description = "A wrapper API around wikipedia's API"
+authors = [{name = "Vanessa Miller", email = "vanessa.g.miller@gmail.com"}]
+readme = "README.md"
+requires-python = ">=3.7"
+
+dependencies = [
+"requests",
+"python-dateutil"
+]
